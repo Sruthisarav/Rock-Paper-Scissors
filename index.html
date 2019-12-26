@@ -1,86 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
-            function computerPlay() {
-                moves = ['rock', 'paper', 'scissors'];
-                random = Math.floor(Math.random() * Math.floor(3));
-                return moves[random];
-            }
-            function playRound(playerSelection, computerSelection) {
-                if (playerSelection === computerSelection) {
-                    return 'It is a draw this round!'
-                } else {
-                    switch(playerSelection) {
-                        case 'rock':
-                            return computerSelection === 'paper';
-                            break;
-                        case 'paper':
-                            return computerSelection === 'scissors';
-                            break;
-                        default:
-                            return computerSelection === 'rock';
-                    }
-                }
-            }
-            function validPlay(move) {
-                validMoves = ['rock', 'paper', 'scissors'];
-                return validMoves.includes(move.toLowerCase());
-            }
-            function humanPlay() {
-                input = prompt('Rock, Paper, Scissors. What is your move?');
-                while(!validPlay(input)) {
-                    alert('Invalid move. Try again.');
-                    input = prompt('Rock, Paper, Scissors. What is your move?');
-                }
-                return input;
-            }
-            function output(playerSelection, computerSelection) {
-                switch (playerSelection) {
-                    case 'rock':
-                        return computerSelection === 'paper'
-                            ? "You Lose this round! Paper beats Rock"
-                            : "You Win this round! Rock beats Scissors";
-                        break;
-                    case 'paper':
-                        return computerSelection === 'scissors'
-                            ? "You Lose this round! Scissors beats Paper"
-                            : "You Win this round! Paper beats Rock";
-                        break;
-                    default:
-                        return computerSelection === 'rock'
-                            ? "You Lose this round! Rock beats Scissors"
-                            : "You Win this round! Scissors beats Paper";
-                }
-            }
-            function game() {
-                humanScore = 0;
-                computerScore = 0;
-                count = 0
-                while(count != 5) {
-                    humanMove = humanPlay().toLowerCase();
-                    computerMove = computerPlay();
-                    result = playRound(humanMove, computerMove);
-                    if (result === 'It is a draw this round!') {
-                        console.log(result);
-                    } else if (result) {
-                        computerScore += 1;
-                        console.log(output(humanMove, computerMove));
-                    } else {
-                        humanScore += 1;
-                        console.log(output(humanMove, computerMove));
-                    }
-                    count+=1;
-                }
-                if (computerScore === humanScore) {
-                    console.log('It is a draw!');
-                } else if (computerScore > humanScore) {
-                    console.log('Computer has won this game!');
-                } else {
-                    console.log('You have won this game!');
-                }
-            }
-            game();
-        </script>
+        <link rel="stylesheet" href="style.css">
     </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        <h2>Score Board:</h2>
+        <p>
+            <div>
+                Computer: <span id="computerScore">0</span>
+            </div>
+            <div>
+                Player: <span id = "playerScore">0</span>
+            </div>
+        </p>
+        <p>
+            <div id = "computerMove"></div>
+            <div id = "playerMove"></div>
+        </p>
+        <p id = "message">
+            Please click a button
+        </p>
+        <button id = "rock"></button>
+        <button id = "paper"></button>
+        <button id = "scissors"></button>
+        <script src = "src.js"></script>
+    </body>
+    <footer>
+        <p>Credits for images: 
+            <a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">
+                Rock Paper Scissors Vectors by Vecteezy
+            </a>
+        </p>
+    </footer>
 </html>

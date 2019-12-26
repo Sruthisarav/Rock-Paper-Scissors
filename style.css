@@ -1,0 +1,28 @@
+button {
+    width: 70px;
+    height: 100px;
+    border-color: blue;
+}
+#rock {
+    background-image: url("rock.png");
+    background-size: 70px 100px;
+}
+#paper {
+    background-image: url("paper.png");
+    background-size: 70px 100px;
+}
+#scissors {
+    background-image: url("scissors.png");
+    background-size: 70px 100px;
+}
+body {
+    text-align: center;
+}
+.compWon {
+    color: red;
+    font-size: 20px;
+}
+.playerWon {
+    color: green;
+    font-size: 20px;
+}
