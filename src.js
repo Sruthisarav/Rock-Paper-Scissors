@@ -24,8 +24,8 @@ function game(e) {
         }
     } 
     if (gameOver(humanScore, computerScore)) {
-        document.getElementById('playerMove').remove();
-        document.getElementById('computerMove').remove();
+        document.getElementById('playerMove').innerHTML = "";
+        document.getElementById('computerMove').innerHTML = "";
         let result = document.getElementById("message");
         if (computerScore > humanScore) {
             message = 'Computer has won this game!';
